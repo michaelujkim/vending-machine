@@ -66,9 +66,19 @@ describe("Vending Machine", () => {
     beforeEach(() => {
       vendingMachine1.dispenseTreats("coke", 1, 1, 0, 0, 0, 0);
     });
-    test("Should be updates list", () => {
+    test("Should be updated list", () => {
       const list = vendingMachine1.printInventory();
       expect(list).toEqual("coke: 18, chips: 10, bars:10");
+
+      //expecting the calls to persist so takes into account the restock and the initial purchase
+    });
+  });
+  describe("Bank after dispensation", () => {
+    test("Should be updated list", () => {
+      const list = vendingMachine1.printBank();
+      expect(list).toEqual(
+        "twoonies: 102, loonies: 100, quarters: 104, dimes: 100, nickels: 100"
+      );
 
       //expecting the calls to persist so takes into account the restock and the initial purchase
     });

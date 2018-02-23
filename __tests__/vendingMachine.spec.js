@@ -1,5 +1,4 @@
 const vendingMachine1 = require("../lib/vendingMachine");
-const vendingMachine2 = require("../lib/vendingMachine");
 describe("Vending Machine", () => {
   describe("Printing Inventory", () => {
     test("Should return all inventory and quantity", () => {
@@ -19,6 +18,14 @@ describe("Vending Machine", () => {
     test("Should return error message", () => {
       const list = vendingMachine1.refillInventory();
       expect(list).toEqual("Oops");
+    });
+  });
+  describe("Print Bank", () => {
+    test("Should be update list", () => {
+      const list = vendingMachine1.printBank();
+      expect(list).toEqual(
+        "twoonies: 100, loonies: 100, quarters: 100, dimes: 100, nickels: 100"
+      );
     });
   });
 
@@ -57,10 +64,10 @@ describe("Vending Machine", () => {
   });
   describe("Inventory after dispensation", () => {
     beforeEach(() => {
-      vendingMachine2.dispenseTreats("coke", 1, 1, 0, 0, 0, 0);
+      vendingMachine1.dispenseTreats("coke", 1, 1, 0, 0, 0, 0);
     });
     test("Should be updates list", () => {
-      const list = vendingMachine2.printInventory();
+      const list = vendingMachine1.printInventory();
       expect(list).toEqual("coke: 18, chips: 10, bars:10");
 
       //expecting the calls to persist so takes into account the restock and the initial purchase

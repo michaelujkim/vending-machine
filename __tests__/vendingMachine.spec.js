@@ -80,7 +80,7 @@ describe("Vending Machine", () => {
         "twoonies: 102, loonies: 100, quarters: 104, dimes: 100, nickels: 100"
       );
 
-      //expecting the calls to persist so takes into account the restock and the initial purchase
+      //expecting the calls to persist so takes into account the restock and the initial purchase, aswell and the call inside the inventory after dispensation
     });
   });
 });

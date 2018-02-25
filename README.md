@@ -1,3 +1,5 @@
+![Screen Shot vendingmachine](screenshot-vending-machine.png "vendingmachine")
+
 # Vending Machine
 
 A vending machine javascript class and test suite to test the functionality of the machine
